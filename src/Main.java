@@ -30,11 +30,11 @@ public class Main {
         // Задание номер 2
         System.out.println("Задание номер 2");
         float[] inputArray2 = {35000, 45000, 55000, 65000, 75000};
-        float[] outputArray2 = new float[5];
+        float[] outputArray2 = new float[inputArray2.length];
         float tax = 0.13f;
         byte i = 0;
         for (float element : inputArray2) {
-            element = (float) (element * (1 - tax));
+            element = (float) (element * tax);
             outputArray2[i] = element;
             i++;
         }
@@ -46,7 +46,7 @@ public class Main {
         // Задание номер 3
         System.out.println("Задание номер 3");
         int[] inputArray3 = {3500, 5000, 9000, 2300, 0};
-        boolean[] outputArray3 = new boolean[5];
+        boolean[] outputArray3 = new boolean[inputArray3.length];
         byte index = 0;
         for (int element : inputArray3) {
             boolean bonus;
@@ -66,12 +66,10 @@ public class Main {
         // Задание номер 4
         System.out.println("Задание номер 4");
         int[] inputArray4 = {1000, -7800, 980, 56, 0};
-        boolean[] outputArray4 = new boolean[5];
-        i = 0;
+        boolean[] outputArray4 = new boolean[1];
         for (int element : inputArray4) {
-            outputArray4[i] = element >= 0;
-            i++;
-            if (outputArray4[i] == false) {
+            outputArray4[0] = element >= 0;
+            if (outputArray4[0] == false) {
                 System.out.println("Должник");
                 break;
             }
@@ -84,20 +82,16 @@ public class Main {
         // Здание номер 5
         System.out.println("Задание номер 5");
         int[] inputArray5 = {0, -987, 365, 9, 18};
-        boolean[] outputArray5 = new boolean[5];
+        int[] outputArray5 = new int[1];
         byte profit = 0;
-        boolean benefit;
-        i = 0;
-        for(int element :inputArray5 ) {
+        for (int element : inputArray5) {
             if (element > 0) {
                 profit++;
-                 benefit = true;
-            } else benefit = false;
-            outputArray5[i] = benefit;
-            i++;
+            }
+            outputArray5[0] = profit;
         }
         System.out.println(Arrays.toString(inputArray5));
         System.out.println(Arrays.toString(outputArray5));
-        System.out.println("Кол-во рентабельных месяцев: " + profit);
+
     }
 }
